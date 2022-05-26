@@ -1,0 +1,204 @@
+$font-color: #4d4d4d;
+$active-color: #4a148c;
+$warn-color: #C62828;
+$bg-overlay-color: #ECEEF2;
+$box-effect: 0px 4px 25px rgb(0 0 0 / 6%);
+$custom-font-weight: 500;
+.page-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: $active-color;
+    padding: 5px 15px;
+    h4{
+        margin-bottom: 0;
+        color: #fff;
+    }
+    button{
+        background-color: unset;
+        color: #fff;
+    }
+}
+.payment-modal{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+    padding: 1rem;
+    .table-section-outer{
+        width: 700px;
+        box-shadow: $box-effect;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        .customer-info{
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding-bottom: 8px;
+            .customer-col{
+                p{
+                    font-size: 13px;
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                }
+                span{
+                    color: $active-color;
+                }
+                h4{
+                    font-size: 20px;
+                    margin-top: 10px;
+                    color: $active-color;
+                    font-weight: bold;
+                }
+            }
+        }
+        .table-section{
+            height: 250px;
+            overflow: auto;
+            table{
+                width: 100%;
+                th{
+                    background-color: $bg-overlay-color;
+                    color: $active-color;
+                    vertical-align: middle;
+                    border: unset;
+                    font-size: 13px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+                td{
+                    font-size: 13px;
+                    color: $font-color;
+                    padding-right: 10px;
+                    padding-left: 10px;
+                    
+                }
+                .mat-table-sticky {
+                    border-top: 1px solid #e0e0e0;
+                }    
+            }
+            
+        }
+        .payment-option-col{
+            background-color: $bg-overlay-color;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 15px 0 0;
+            .total-col{
+                p{
+                    font-size: 13px;
+                    color: $font-color;
+                    margin-bottom: 5px;
+                    font-weight: $custom-font-weight;
+                }
+                span{
+                    width: auto;
+                    text-align: right;
+                    display: block;
+                    float: right;
+                    margin-left: 100px;
+                }
+            }
+            .balance-total{
+                padding: 15px 10px;
+                text-align: right;
+                padding-bottom: 0;
+                p{
+                    font-size: 30px;
+                    color: $active-color;
+                    font-weight: bold;
+                    margin-bottom: 0;
+                    span{
+                        margin-left: 50px;
+                        width: auto;
+                    }
+                }
+            }
+        }
+            
+    }
+    .payment-section{
+        display: flex;
+        flex-wrap: wrap;
+        width: 35%;
+        justify-content: space-between;
+        .amount-section{
+            box-shadow: $box-effect;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            width: 100%;
+            .enter-amount-section{
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                input{
+                    height: 40px;
+                    width: 78%;
+                    border-radius: 5px 0 0 5px;
+                    background-color: $active-color;
+                    color: #fff;
+                    padding: 0 15px;
+                    border: 1px solid #ccc;
+                    outline: unset;
+                    border-right: unset;
+                }::placeholder{
+                    color: #fff;
+                }
+                button{
+                    font-size: 13px;
+                    font-weight: bold;
+                    color: #fff;
+                    padding: 0 11px;
+                    height: 40px;
+                    border-radius: 0px 5px 5px 0px;
+                    border: 1px solid #ccc;
+                    background: $warn-color;
+                    width: 76px;
+                    border-left: unset;
+                }
+            }
+            .number-table{
+                margin-top: 15px;
+                .number-row{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    margin-bottom: 15px;
+                    .number-col{
+                        background-color: $bg-overlay-color;
+                        border: 1px solid #cccc;
+                        font-size: 18px;
+                        font-weight: bold;
+                        width: 105px;
+                        text-align: center;
+                        padding: 15px;
+                        border-radius: 3px;
+                    }  
+                }
+                .card-option{
+                    border: unset;
+                    mat-button-toggle{
+                        border-radius: 3px;
+                        font-size: 14px;
+                        border: 1px solid #ccc;
+                        font-weight: $custom-font-weight;
+                        margin-top: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+::-webkit-scrollbar {
+    background-color: $font-color;
+    width: 3px;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: $active-color;
+    width: 3px;
+    border-radius: 5px;
+}

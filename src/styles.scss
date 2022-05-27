@@ -63,6 +63,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   max-width: 100% !important;
 }
 .mat-dialog-container{
-  width: 1130px !important;
+  // width: 1130px !important;
   padding: 0px !important;
+}
+
+app-newbooking, app-quicksale, app-ordermore{
+  .mat-checkbox-inner-container{
+    display: none;
+  }
 }

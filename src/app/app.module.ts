@@ -9,13 +9,19 @@ import { MatModule } from './mat/mat.module';
 import { FormsModule } from '@angular/forms';
 import { NewbookingComponent } from './newbooking/newbooking.component';
 import { PaymentComponent } from './payment/payment.component';
+import { QuicksaleComponent } from './quicksale/quicksale.component';
+import { OrdermoreComponent } from './ordermore/ordermore.component';
+import { OrderlistComponent } from './orderlist/orderlist.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NewbookingComponent,
-    PaymentComponent
+    PaymentComponent,
+    QuicksaleComponent,
+    OrdermoreComponent,
+    OrderlistComponent
   ],
   imports: [
     BrowserModule,

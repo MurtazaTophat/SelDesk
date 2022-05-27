@@ -1,66 +1,17 @@
 <div class="page-header">
-    <h4 class="page-title">New Booking</h4>
+    <h4 class="page-title">Quick Sale</h4>
     <button mat-button mat-dialog-close>&times;</button>
 </div>
 
 <div class="payment-modal newbooking-module">
   <!-- Left Side Content -->
   <section class="table-section-outer">
-      <div class="customer-info">
+      <div class="customer-info mb-0">
           <div class="customer-col">
-              <p>Booking Number: <span>10082</span></p>
-              <p>Booking Serial Number: <span>BK10082</span></p>
-              <p>Total: <span>$1000.00</span></p>
-              <button mat-button><mat-icon>payment</mat-icon></button>
-              <button mat-button><mat-icon>edit</mat-icon></button>
+              <p>Order Number: <span>10082</span></p>
+              <p>Order Serial Number: <span>BK10082</span></p>
               <button mat-button><mat-icon>save</mat-icon></button>
           </div>
-      </div>
-      <div class="customer-field-outer">
-        <div class="field-row">
-          <div class="form-col form-colSec">
-            <label>Customer Name<sup>*</sup></label>
-            <input matInput type="text" name="" placeholder="Jone Doe Dummy">
-            <button mat-button>List</button>
-          </div>
-          <div class="form-col form-colSec">
-            <label>Contact Number<sup>*</sup></label>
-            <input matInput type="number" name="" placeholder="1234567890">
-          </div>
-          <div class="form-col">
-            <label>Chose a Date<sup>*</sup></label>
-            <input matInput type="date" name="" placeholder="19-05-2022">
-          </div>
-          <div class="form-col">
-            <label>Gender<sup>*</sup></label>
-            <select matInput>
-              <option value="option">Male</option>
-              <option value="option">Female</option>
-            </select>
-          </div>
-          <div class="form-col">
-            <label>Source From<sup>*</sup></label>
-            <select matInput>
-              <option value="option">Friends</option>
-              <option value="option">Other Option</option>
-            </select>
-          </div>
-          <div class="form-col">
-            <label>Time From<sup>*</sup></label>
-            <input matInput type="time" name="" placeholder="11:00 AM">
-          </div>
-          <div class="form-col">
-            <label>Time To<sup>*</sup></label>
-            <input matInput type="time" name="" placeholder="01:00 PM">
-          </div>
-          <div class="form-col">
-            <label>Table<sup>*</sup></label>
-            <select>
-              <option value="option">Table 01</option>
-              <option value="option">Table 02</option>
-            </select>
-          </div>
-        </div>
       </div>
       <div class="example-container table-section">
           <table mat-table [dataSource]="dataSource">
@@ -68,21 +19,6 @@
           <ng-container matColumnDef="ProductName">
               <th mat-header-cell *matHeaderCellDef> Product Name </th>
               <td mat-cell *matCellDef="let element"> {{element.ProductName}} </td>
-          </ng-container>
-  
-          <ng-container matColumnDef="ProductDescription">
-              <th mat-header-cell *matHeaderCellDef> Product Description </th>
-              <td mat-cell *matCellDef="let element"> {{element.ProductDescription}} </td>
-          </ng-container>
-  
-          <ng-container matColumnDef="EmployeName">
-              <th mat-header-cell *matHeaderCellDef class="text-center"> Employe Name </th>
-              <td mat-cell *matCellDef="let element" class="text-center"> {{element.EmployeName}} </td>
-          </ng-container>
-  
-          <ng-container matColumnDef="TimeReq">
-              <th mat-header-cell *matHeaderCellDef class="text-center"> Time Req </th>
-              <td mat-cell *matCellDef="let element" class="text-center"> {{element.TimeReq}} </td>
           </ng-container>
   
           <ng-container matColumnDef="Qty">

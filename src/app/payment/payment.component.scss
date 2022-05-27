@@ -73,6 +73,8 @@ $custom-font-weight: 500;
                     padding-right: 10px;
                     padding-left: 10px;
                     
+                }.action-delete{
+                    color: $warn-color;
                 }
                 .mat-table-sticky {
                     border-top: 1px solid #e0e0e0;

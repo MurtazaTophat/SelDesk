@@ -1,0 +1,76 @@
+<div class="page-header">
+    <h4 class="page-title">Order List</h4>
+    <button mat-button mat-dialog-close>&times;</button>
+</div>
+
+<div class="payment-modal newbooking-module">
+  <!-- Left Side Content -->
+  <section class="table-section-outer">
+      <div class="customer-field-outer">
+        <div class="field-row">
+          <div class="form-col">
+            <input matInput (keyup)="applyFilter($event)" name="" placeholder="Find by Customer">
+            <!-- <button mat-button>Find by Customer</button> -->
+          </div>
+          <div class="form-col">
+            <input matInput (keyup)="applyFilter($event)" name="" placeholder="Mobile Number">
+          </div>
+          <div class="form-col">
+            <button mat-button>Booking Orders</button>
+            <button mat-button>Quick Orders</button>
+          </div>
+        </div>
+      </div>
+      <div class="example-container table-section">
+          <table mat-table [dataSource]="dataSource">
+          <ng-container matColumnDef="HeadName">
+              <th mat-header-cell *matHeaderCellDef> HeadName </th>
+              <td mat-cell *matCellDef="let element"> {{element.HeadName}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="CustKey">
+              <th mat-header-cell *matHeaderCellDef> CustKey </th>
+              <td mat-cell *matCellDef="let element"> {{element.CustKey}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="CustCode">
+              <th mat-header-cell *matHeaderCellDef class="text-center"> CustCode </th>
+              <td mat-cell *matCellDef="let element" class="text-center"> {{element.CustCode}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="CustName">
+              <th mat-header-cell *matHeaderCellDef class="text-center"> CustName </th>
+              <td mat-cell *matCellDef="let element" class="text-center"> {{element.CustName}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="TransDate">
+              <th mat-header-cell *matHeaderCellDef class="text-center"> TransDate </th>
+              <td mat-cell *matCellDef="let element" class="text-center"> {{element.TransDate}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="AppointDate">
+              <th mat-header-cell *matHeaderCellDef class="text-end"> AppointDate </th>
+              <td mat-cell *matCellDef="let element" class="text-end"> {{element.AppointDate}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="TimeFrom">
+            <th mat-header-cell *matHeaderCellDef class="text-center"> TimeFrom </th>
+            <td mat-cell *matCellDef="let element" class="text-center"> {{element.TimeFrom}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="TimeTo">
+            <th mat-header-cell *matHeaderCellDef class="text-center"> TimeTo </th>
+            <td mat-cell *matCellDef="let element" class="text-center"> {{element.TimeTo}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Action">
+            <th mat-header-cell *matHeaderCellDef class="text-center"> Action </th>
+            <td mat-cell *matCellDef="let element" class="text-center action-select"> {{element.Action}} </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+      </div>
+  </section>
+</div>

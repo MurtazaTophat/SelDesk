@@ -8,8 +8,12 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule } from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatRippleModule} from '@angular/material/core';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 const material = [
@@ -21,7 +25,11 @@ const material = [
   MatButtonToggleModule,
   MatInputModule,
   MatDialogModule,
-  MatMenuModule
+  MatMenuModule,
+  MatFormFieldModule,
+  MatSelectModule,
+  MatRippleModule,
+  MatCheckboxModule
 ]
 
 @NgModule({

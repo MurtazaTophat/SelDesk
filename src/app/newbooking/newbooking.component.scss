@@ -1,1 +1,125 @@
 @import '../payment/payment.component.scss';
+$font-color: #4d4d4d;
+$active-color: #4a148c;
+$warn-color: #C62828;
+$bg-overlay-color: #ECEEF2;
+$box-effect: 0px 4px 25px rgb(0 0 0 / 6%);
+$custom-font-weight: 500;
+.newbooking-module{
+    align-items: flex-start;
+    .customer-info{
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 15px;
+        .customer-col{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 100%;
+            p{
+                margin-bottom: 0 !important;
+            }
+            button{
+                padding: 0px 5px;
+                min-width: auto;
+                background-color: green;
+                margin-left: -35px;
+                mat-icon{
+                    font-size: 18px;
+                    color: #fff;
+                    height: unset;
+                }
+            }button:nth-last-child(1){
+                background-color: $active-color;
+            }button:nth-last-child(2){
+                background-color: orangered;
+            }button:nth-last-child(3){
+                margin-left: 10px;
+            }
+            
+        }
+    }
+    .customer-field-outer{
+        .field-row{
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .form-col{
+                width: 32%;
+                margin-bottom: 10px;
+                label{
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: $active-color;
+                    margin-bottom: 0px;
+                    font-weight: $custom-font-weight;
+                    sup{
+                        color: $warn-color;
+                    }
+                }
+                input, select{
+                    width: 100%;
+                    background-color: $bg-overlay-color;
+                    font-size: 12px;
+                    color: $font-color;
+                    border-radius: 5px;
+                    padding: 8px;
+                    border: 1px solid #ccc;
+                    outline: unset;
+                }
+                button{
+                    background-color: $active-color;
+                    color: #fff;
+                    font-size: 13px;
+                    padding: 0.7px 9px;
+                    border-radius: 0 5px 5px 0;
+                    margin-left: -6px;
+                    min-width: 62px;
+                }
+            }.form-colSec{
+                width: 49%;
+                
+            }.form-colSec:nth-child(1) input{
+                width: 83%;
+                border-radius: 5px 0 0 5px;
+            }
+            
+        }
+    }
+    .product-col-outer {
+        width: 420px;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 10px;
+        overflow: hidden;
+        overflow-y: auto;
+        height: 545px;
+        .product-col{
+            text-align: center;
+            border: 2px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            .product-img{
+                border: 1px solid #5f426c;
+                border-radius: 100%;
+                width: 50px;
+                height: 50px;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 8px;
+                margin-bottom: 8px;
+            }
+        }
+        .mat-checkbox-checked{
+            border-color: $active-color;
+            text-align: center;
+        }
+    }
+}

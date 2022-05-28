@@ -12,6 +12,11 @@ import { PaymentComponent } from './payment/payment.component';
 import { QuicksaleComponent } from './quicksale/quicksale.component';
 import { OrdermoreComponent } from './ordermore/ordermore.component';
 import { OrderlistComponent } from './orderlist/orderlist.component';
+import { BillingComponent } from './billing/billing.component';
+import { ReportsComponent } from './reports/reports.component';
+import { ReportsprintComponent } from './reports/reportsprint/reportsprint.component';
+import { AddnewcustomerComponent } from './newbooking/addnewcustomer/addnewcustomer.component';
+import { CustomerselectComponent } from './newbooking/customerselect/customerselect.component';
 
 
 @NgModule({
@@ -21,7 +26,12 @@ import { OrderlistComponent } from './orderlist/orderlist.component';
     PaymentComponent,
     QuicksaleComponent,
     OrdermoreComponent,
-    OrderlistComponent
+    OrderlistComponent,
+    CustomerselectComponent,
+    BillingComponent,
+    ReportsComponent,
+    ReportsprintComponent,
+    AddnewcustomerComponent
   ],
   imports: [
     BrowserModule,

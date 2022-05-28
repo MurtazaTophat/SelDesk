@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { CustomerselectComponent } from './customerselect/customerselect.component';
 
 export interface PeriodicElement {
   ProductName: string;
@@ -30,5 +31,10 @@ export class NewbookingComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+  customerselectDialog(){
+    this.dialog.open(CustomerselectComponent,{
+      width: '1000px'
+    })
   }
 }

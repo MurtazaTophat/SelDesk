@@ -1,0 +1,138 @@
+<mat-toolbar class="mat-elevation-z6" color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img src="assets/img/logo.png" alt="">
+    <span class="example-spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu" class="user-image">
+      <img src="../assets/img/user/user.jpg" alt="">
+      <span>Jone Doe</span>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <span>Manage Subscriptions</span>
+      </button>
+      <button mat-menu-item>
+        <span>My Profile</span>
+      </button>
+      <button mat-menu-item>
+        <span>Inbox</span>
+      </button>
+      <button mat-menu-item>
+        <span>Billing</span>
+      </button>
+      <button mat-menu-item>
+        <span>Activity Log</span>
+      </button>
+      <button mat-menu-item>
+        <span>Change Password</span>
+      </button>
+    </mat-menu>
+    <button mat-button class="ml-5">
+      <mat-icon class="mr-2">logout</mat-icon>
+    </button>
+  </mat-toolbar>
+  
+  <section class="main-outer">
+    <mat-drawer-container class="main-inner" autosize>
+      <mat-drawer  opened #drawer class="sidenav" mode="side">
+          <div class="sidenav-content">
+              <p><a routerLink="#"><mat-icon>dashboard</mat-icon><span>Dash Board</span></a></p>
+              <p><a routerLink="billing"><mat-icon>calculate</mat-icon><span>Billing</span></a></p>
+              <p><a routerLink="#"><mat-icon>receipt</mat-icon><span>Reports</span></a></p>
+              <p (click)="ToggelOpen()"><a routerLink="#"><mat-icon>filter_vintage</mat-icon><span>Masters</span></a></p>
+                <div class="menu-option" [ngClass]="[Flag ? 'd-block': 'd-none']">
+                    <span><a routerLink="#">Products</a></span>
+                    <span><a routerLink="#">Customers</a></span>
+                    <span><a routerLink="#">Other</a></span>
+                </div>
+              <p><a routerLink="#"><mat-icon>tune</mat-icon><span>Settings</span></a></p>
+          </div>
+      </mat-drawer>
+      
+      <div class="main-layout">
+        <div class="breadcrumb-outer">
+          <nav aria-label="breadcrumb" >
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+              <li class="breadcrumb-item active" aria-current="page"><a href="#">Reports</a></li>
+            </ol>
+          </nav>
+        </div>
+        <div class="payment-modal newbooking-module">
+          <section class="table-section-outer">
+            <div class="customer-field-outer">
+              <div class="field-row">
+                <div class="form-col">
+                  <label>Date From <sup>*</sup></label>
+                  <input matInput name="" type="date">
+                </div>
+                <div class="form-col">
+                  <label>Date To <sup>*</sup></label>
+                  <input matInput name="" type="date">
+                </div>
+                <div class="form-col">
+                  <label>Period <sup>*</sup></label>
+                  <select name="" >
+                    <option>Current</option>
+                    <option>History</option>
+                  </select>
+                </div>
+                <div class="form-col">
+                  <label>Machine <sup>*</sup></label>
+                  <select name="" >
+                    <option>Machine 01</option>
+                    <option>Machine 02</option>
+                  </select>
+                </div>
+                <div class="form-col">
+                  <label>User <sup>*</sup></label>
+                  <select name="" >
+                    <option>Jone Doe</option>
+                  </select>
+                </div>
+                <div class="form-col form-button-col">
+                  <p></p>
+                  <button mat-button>Update</button>
+                </div>
+              </div>
+            </div>
+            <div class="reports-outer">
+              <div class="reports-col">
+                <button mat-button (click)="reportsPrintDialog()">X Sales Report</button>
+              </div>
+              <div class="reports-col">
+                <button mat-button>Item Sales Report</button>
+              </div>
+              <div class="reports-col">
+                <button mat-button>Bill Summary Report</button>
+              </div>
+              <div class="reports-col">
+                <button mat-button>Z Report</button>
+              </div>
+              <div class="reports-col">
+                <button mat-button>Day End Report</button>
+              </div>
+              <div class="reports-col">
+                <button mat-button>X Sales Report</button>
+              </div>
+              <div class="reports-col">
+                <button mat-button>Item Sales Report</button>
+              </div>
+              <div class="reports-col">
+                <button mat-button>Bill Summary Report</button>
+              </div>
+              <div class="reports-col">
+                <button mat-button>Z Report</button>
+              </div>
+              <div class="reports-col">
+                <button mat-button>Day End Report</button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    
+    </mat-drawer-container>    
+  </section>
+  

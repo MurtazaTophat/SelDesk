@@ -1,0 +1,177 @@
+
+<mat-toolbar class="mat-elevation-z6" color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img src="assets/img/logo.png" alt="">
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+  
+  <div class="breadcrumb-outer">
+    <nav aria-label="breadcrumb" >
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="#">New Billing</a></li>
+      </ol>
+    </nav>
+  </div>
+  <div class="main-outer">
+    <!-- Left Side Content -->
+    <section class="table-section-outer">
+      <div class="example-container table-section">
+        <table mat-table [dataSource]="dataSource">
+  
+          <ng-container matColumnDef="ProductName">
+            <th mat-header-cell *matHeaderCellDef> Product Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.ProductName}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="ProductDescription">
+            <th mat-header-cell *matHeaderCellDef> Product Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.ProductDescription}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="EmployeName">
+            <th mat-header-cell *matHeaderCellDef class="text-center"> Employe Name </th>
+            <td mat-cell *matCellDef="let element" class="text-center"> {{element.EmployeName}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="TimeReq">
+            <th mat-header-cell *matHeaderCellDef class="text-center"> Time Req </th>
+            <td mat-cell *matCellDef="let element" class="text-center"> {{element.TimeReq}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="Qty">
+            <th mat-header-cell *matHeaderCellDef class="text-center"> Qty </th>
+            <td mat-cell *matCellDef="let element" class="text-center"> {{element.Qty}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="Price">
+            <th mat-header-cell *matHeaderCellDef class="text-end"> Price </th>
+            <td mat-cell *matCellDef="let element" class="text-end"> {{element.Price}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="Amount">
+            <th mat-header-cell *matHeaderCellDef class="text-end"> Amount </th>
+            <td mat-cell *matCellDef="let element" class="text-end"> {{element.Amount}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="Action">
+            <th mat-header-cell *matHeaderCellDef class="text-center"> Action </th>
+            <td mat-cell *matCellDef="let element" class="text-center action-delete"> {{element.Action}} </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+      <mat-card class="payment-table">
+        <mat-card-title>Payment</mat-card-title>
+        <div class="payment-option-col">
+          <div class="total-col">
+            <p>Total Items: <span>05</span></p>
+            <p>Discount Items: <span>02</span></p>
+          </div>
+          <div class="total-col">
+            <p>Sub Total: <span>$2000.00</span></p>
+            <p>Vat Amount: <span>$0.00</span></p>
+            <p>Discount: <span>$0.00</span></p>
+            <p>Bill Amount: <span>$2000.00</span></p>
+            <p>Paid Amount: <span>$0.00</span></p>
+          </div>
+        </div>
+        <mat-card-title>Payment Method</mat-card-title>
+        <div class="payment-option-col">
+          <div class="total-col">
+            <p class="m-0">19/05/2022 1:45 PM</p>
+          </div>
+          <div class="total-col">
+            <p class="m-0">Credit Card</p>
+          </div>
+          <div class="total-col">
+            <p class="m-0">$2000.00</p>
+          </div>
+        </div>
+        <div class="total-col paid-total">
+          <p>Total Paid: <span>$2000.00</span></p>
+        </div>
+        <div class="total-col balance-total">
+          <p>Balance: <span>0.00</span></p>
+        </div>
+      </mat-card>
+    </section>
+  
+    <!-- second-content -->
+    <section class="payment-section">
+      <mat-card class="amount-section">
+        <div class="enter-amount-section">
+          <input matInput type="number" [(ngModel)]="value" placeholder="Enter Amount Number">
+          <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            Clear
+          </button>
+        </div>
+        
+  
+        <div class="number-table">
+          <div class="number-row">
+            <div class="number-col">7</div>
+            <div class="number-col">8</div>
+            <div class="number-col">9</div>
+          </div>
+          <div class="number-row">
+            <div class="number-col">4</div>
+            <div class="number-col">5</div>
+            <div class="number-col">6</div>
+          </div>
+          <div class="number-row">
+            <div class="number-col">1</div>
+            <div class="number-col">2</div>
+            <div class="number-col">3</div>
+          </div>
+          <div class="number-row">
+            <div class="number-col">-</div>
+            <div class="number-col">0</div>
+            <div class="number-col">.</div>
+          </div>
+          <mat-button-toggle-group class="number-row card-option">
+            <mat-button-toggle>Cash</mat-button-toggle>
+            <mat-button-toggle>Credit Card</mat-button-toggle>
+            <mat-button-toggle>Other</mat-button-toggle>
+          </mat-button-toggle-group>
+          <mat-button-toggle-group class="number-row card-option refund-option">
+            <mat-button-toggle>Refund</mat-button-toggle>
+            <mat-button-toggle>Old Bills</mat-button-toggle>
+            <mat-button-toggle>Bills</mat-button-toggle>
+          </mat-button-toggle-group>    
+          <div class="number-row card-option refund-option">
+            <button mat-button class="number-col cancel-col">Cancel Bill</button>
+            <button mat-button class="number-col">Print Bill</button>
+          </div>
+        </div>
+      </mat-card>
+  
+      <mat-card class="amount-section quick-section">
+        <h3>Quick Option</h3>
+        <div class="quick-btn-grp">
+          <button mat-button (click)="newbookingDialog()">New Booking</button>
+          <button mat-button (click)="quicksaleDialog()">Quick Sale</button>
+          <button mat-button (click)="orderlistDialog()">Order List</button>
+          <button mat-button (click)="ordermoreDialog()">Order More</button>
+  
+          <button mat-button class="mt-4">Disc-</button>
+          <button mat-button>Man-</button>
+  
+          <button mat-button class="mt-4">Attendant Change</button>
+          <button mat-button>Open Comment</button>
+          <button mat-button>Work Table</button>
+        </div>
+      </mat-card>
+  
+      <div class="action-btn">
+        <button mat-button>Function</button>
+        <button mat-button>Others</button>
+        <button mat-button (click)="paymentDialog()">Payment</button>
+      </div>
+    </section>
+  
+  </div>

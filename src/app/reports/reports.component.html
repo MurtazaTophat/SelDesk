@@ -37,16 +37,16 @@
     <mat-drawer-container class="main-inner" autosize>
       <mat-drawer  opened #drawer class="sidenav" mode="side">
           <div class="sidenav-content">
-              <p><a routerLink="#"><mat-icon>dashboard</mat-icon><span>Dash Board</span></a></p>
-              <p><a routerLink="billing"><mat-icon>calculate</mat-icon><span>Billing</span></a></p>
-              <p><a routerLink="#"><mat-icon>receipt</mat-icon><span>Reports</span></a></p>
-              <p (click)="ToggelOpen()"><a routerLink="#"><mat-icon>filter_vintage</mat-icon><span>Masters</span></a></p>
+              <p><a routerLink="/"><mat-icon>dashboard</mat-icon><span>Dash Board</span></a></p>
+              <p><a routerLink="/billing"><mat-icon>calculate</mat-icon><span>Billing</span></a></p>
+              <p><a routerLink="/reports"><mat-icon>receipt</mat-icon><span>Reports</span></a></p>
+              <p (click)="ToggelOpen()"><a><mat-icon>filter_vintage</mat-icon><span>Masters</span></a></p>
                 <div class="menu-option" [ngClass]="[Flag ? 'd-block': 'd-none']">
-                    <span><a routerLink="#">Products</a></span>
-                    <span><a routerLink="#">Customers</a></span>
-                    <span><a routerLink="#">Other</a></span>
+                    <span><a routerLink="/products">Products</a></span>
+                    <span><a routerLink="/customer">Customers</a></span>
+                    <span><a routerLink="/others">Other</a></span>
                 </div>
-              <p><a routerLink="#"><mat-icon>tune</mat-icon><span>Settings</span></a></p>
+              <p><a routerLink="/settings"><mat-icon>tune</mat-icon><span>Settings</span></a></p>
           </div>
       </mat-drawer>
       
@@ -54,8 +54,8 @@
         <div class="breadcrumb-outer">
           <nav aria-label="breadcrumb" >
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-              <li class="breadcrumb-item active" aria-current="page"><a href="#">Reports</a></li>
+              <li class="breadcrumb-item"><a routerLink="/">Dashboard</a></li>
+              <li class="breadcrumb-item active" aria-current="page"><a routerLink="/reports">Reports</a></li>
             </ol>
           </nav>
         </div>

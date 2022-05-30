@@ -1,0 +1,173 @@
+<mat-toolbar class="mat-elevation-z6" color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img src="assets/img/logo.png" alt="">
+    <span class="example-spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu" class="user-image">
+      <img src="../assets/img/user/user.jpg" alt="">
+      <span>Jone Doe</span>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <span>Manage Subscriptions</span>
+      </button>
+      <button mat-menu-item>
+        <span>My Profile</span>
+      </button>
+      <button mat-menu-item>
+        <span>Inbox</span>
+      </button>
+      <button mat-menu-item>
+        <span>Billing</span>
+      </button>
+      <button mat-menu-item>
+        <span>Activity Log</span>
+      </button>
+      <button mat-menu-item>
+        <span>Change Password</span>
+      </button>
+    </mat-menu>
+    <button mat-button class="ml-5">
+      <mat-icon class="mr-2">logout</mat-icon>
+    </button>
+  </mat-toolbar>
+  
+  <section class="main-outer">
+    <mat-drawer-container class="main-inner" autosize>
+        <mat-drawer  opened #drawer class="sidenav" mode="side">
+            <div class="sidenav-content">
+                <p><a routerLink="/"><mat-icon>dashboard</mat-icon><span>Dash Board</span></a></p>
+                <p><a routerLink="/billing"><mat-icon>calculate</mat-icon><span>Billing</span></a></p>
+                <p><a routerLink="/reports"><mat-icon>receipt</mat-icon><span>Reports</span></a></p>
+                <p (click)="ToggelOpen()"><a><mat-icon>filter_vintage</mat-icon><span>Masters</span></a></p>
+                  <div class="menu-option" [ngClass]="[Flag ? 'd-block': 'd-none']">
+                      <span><a routerLink="/products">Products</a></span>
+                      <span><a routerLink="/customer">Customers</a></span>
+                      <span><a routerLink="/others">Other</a></span>
+                  </div>
+                <p><a routerLink="/settings"><mat-icon>tune</mat-icon><span>Settings</span></a></p>
+            </div>
+        </mat-drawer>
+      
+      <div class="main-layout">
+        <div class="breadcrumb-outer">
+          <nav aria-label="breadcrumb" >
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a routerLink="/">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a routerLink="#">Master</a></li>
+              <li class="breadcrumb-item active" aria-current="page"><a routerLink="/customer">Customers</a></li>
+            </ol>
+          </nav>
+        </div>
+        <div class="payment-modal newbooking-module">
+            <section class="product-col-outer">
+            <button mat-button class="product-col" (click)="productListDialog()">
+              <div class="product-img">
+                <img src="../../assets/img/product-img/img02.png">
+              </div>
+              <span>Products</span>
+            </button>
+            <button mat-button class="product-col">
+              <div class="product-img">
+                <img src="../../assets/img/product-img/img02.png">
+              </div>
+              <span>Products Category</span>
+            </button>
+            <button mat-button class="product-col">
+              <div class="product-img">
+                <img src="../../assets/img/product-img/img02.png">
+              </div>
+              <span>Product Type</span>
+            </button>
+            <button mat-button class="product-col">
+              <div class="product-img">
+                <img src="../../assets/img/product-img/img02.png">
+              </div>
+              <span>Product Department</span>
+            </button>
+            <button mat-button class="product-col">
+              <div class="product-img">
+                <img src="../../assets/img/product-img/img02.png">
+              </div>
+              <span>Customer</span>
+            </button>
+            <button mat-button class="product-col">
+              <div class="product-img">
+                <img src="../../assets/img/product-img/img02.png">
+              </div>
+              <span>Customer Group</span>
+            </button>
+            <button mat-button class="product-col">
+              <div class="product-img">
+                <img src="../../assets/img/product-img/img02.png">
+              </div>
+              <span>Company</span>
+            </button>
+            <button mat-button class="product-col">
+              <div class="product-img">
+                <img src="../../assets/img/product-img/img02.png">
+              </div>
+              <span>User</span>
+            </button>
+            <button mat-button class="product-col">
+              <div class="product-img">
+                <img src="../../assets/img/product-img/img02.png">
+              </div>
+              <span>Employee</span>
+            </button>
+            <button mat-button class="product-col">
+              <div class="product-img">
+                <img src="../../assets/img/product-img/img02.png">
+              </div>
+              <span>Employee Group</span>
+            </button>
+            <button mat-button class="product-col">
+              <div class="product-img">
+                <img src="../../assets/img/product-img/img02.png">
+              </div>
+              <span>Employee Type</span>
+            </button>
+            <button mat-button class="product-col">
+              <div class="product-img">
+                <img src="../../assets/img/product-img/img03.png">
+              </div>
+              <span>Nation</span>
+            </button>
+            <button mat-button class="product-col">
+                <div class="product-img">
+                  <img src="../../assets/img/product-img/img03.png">
+                </div>
+                <span>Tax</span>
+            </button>
+            <button mat-button class="product-col">
+                <div class="product-img">
+                  <img src="../../assets/img/product-img/img03.png">
+                </div>
+                <span>Tax Tye</span>
+            </button>
+            <button mat-button class="product-col">
+                <div class="product-img">
+                  <img src="../../assets/img/product-img/img03.png">
+                </div>
+                <span>Currency</span>
+            </button>
+            <button mat-button class="product-col">
+                <div class="product-img">
+                  <img src="../../assets/img/product-img/img03.png">
+                </div>
+                <span>Shift Pool</span>
+            </button>
+            <button mat-button class="product-col">
+                <div class="product-img">
+                  <img src="../../assets/img/product-img/img03.png">
+                </div>
+                <span>Offer</span>
+            </button>
+            </section>
+        </div>
+      </div>
+    
+    </mat-drawer-container>    
+  </section>
+  

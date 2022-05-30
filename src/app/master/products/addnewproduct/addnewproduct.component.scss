@@ -1,0 +1,16 @@
+@import '../../../newbooking/newbooking.component.scss';
+.payment-modal{
+    .table-section-outer{
+        width: 100% !important;
+        .form-col{
+            // width: 17% !important;
+            button{
+                border-radius: 5px !important;
+            }
+        }
+        .form-button-col{
+            width: 100% !important;
+            margin-bottom: 0;
+        }
+    }
+}

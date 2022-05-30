@@ -1,0 +1,25 @@
+@import '../../../newbooking/newbooking.component.scss';
+.payment-modal{
+    .table-section-outer{
+        width: 100% !important;
+        .table-section{
+            height: 480px !important;
+            .action-select{
+                color: green !important;
+            }
+            .action-edit{
+                color: orangered !important;
+            }
+        }
+        .form-col{
+            width: 90% !important;
+            button{
+                border-radius: 5px !important;
+                margin-left: 15px !important;
+            }
+        }
+        .add-newbtn{
+            width: auto !important;
+        }
+    }
+}

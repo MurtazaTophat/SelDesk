@@ -17,6 +17,13 @@ import { ReportsComponent } from './reports/reports.component';
 import { ReportsprintComponent } from './reports/reportsprint/reportsprint.component';
 import { AddnewcustomerComponent } from './newbooking/addnewcustomer/addnewcustomer.component';
 import { CustomerselectComponent } from './newbooking/customerselect/customerselect.component';
+import { MasterComponent } from './master/master.component';
+import { ProductsComponent } from './master/products/products.component';
+import { CustomerComponent } from './master/customer/customer.component';
+import { OthersComponent } from './master/others/others.component';
+import { ProductlistComponent } from './master/products/productlist/productlist.component';
+import { AddnewproductComponent } from './master/products/addnewproduct/addnewproduct.component';
+import { EditproductComponent } from './master/products/editproduct/editproduct.component';
 
 
 @NgModule({
@@ -31,7 +38,14 @@ import { CustomerselectComponent } from './newbooking/customerselect/customersel
     BillingComponent,
     ReportsComponent,
     ReportsprintComponent,
-    AddnewcustomerComponent
+    AddnewcustomerComponent,
+    MasterComponent,
+    ProductsComponent,
+    CustomerComponent,
+    OthersComponent,
+    ProductlistComponent,
+    AddnewproductComponent,
+    EditproductComponent
   ],
   imports: [
     BrowserModule,

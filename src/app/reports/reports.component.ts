@@ -19,6 +19,7 @@ export class ReportsComponent implements OnInit {
     this.Flag=!this.Flag
 
   }
+  
   reportsPrintDialog(){
     this.dialog.open(ReportsprintComponent,{
       width: '450px'

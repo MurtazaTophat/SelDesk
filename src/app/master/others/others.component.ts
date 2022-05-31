@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ProductlistComponent } from '../products/productlist/productlist.component';
+import { ProductlistComponent } from '../products/productmasterlist/productlist.component';
 
 @Component({
   selector: 'app-others',

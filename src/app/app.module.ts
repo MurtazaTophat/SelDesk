@@ -21,9 +21,27 @@ import { MasterComponent } from './master/master.component';
 import { ProductsComponent } from './master/products/products.component';
 import { CustomerComponent } from './master/customer/customer.component';
 import { OthersComponent } from './master/others/others.component';
-import { ProductlistComponent } from './master/products/productlist/productlist.component';
-import { AddnewproductComponent } from './master/products/addnewproduct/addnewproduct.component';
-import { EditproductComponent } from './master/products/editproduct/editproduct.component';
+import { ProductlistComponent } from './master/products/productmasterlist/productlist.component';
+import { AddnewproductComponent } from './master/products/productmasterlist/addnewproduct/addnewproduct.component';
+import { EditproductComponent } from './master/products/productmasterlist/editproduct/editproduct.component';
+import { ProductdepartmentComponent } from './master/products/productdepartment/productdepartment.component';
+import { ProductcategoryComponent } from './master/products/productcategory/productcategory.component';
+import { ProducttypeComponent } from './master/products/producttype/producttype.component';
+import { CustomermasterComponent } from './master/products/customermaster/customermaster.component';
+import { CustomergroupComponent } from './master/products/customergroup/customergroup.component';
+import { CustomercategoryComponent } from './master/products/customercategory/customercategory.component';
+import { CompanymasterComponent } from './master/products/companymaster/companymaster.component';
+import { UsermasterComponent } from './master/products/usermaster/usermaster.component';
+import { EmployeemasterComponent } from './master/products/employeemaster/employeemaster.component';
+import { EmployeegroupComponent } from './master/products/employeegroup/employeegroup.component';
+import { EmployeetypeComponent } from './master/products/employeetype/employeetype.component';
+import { NationalityComponent } from './master/products/nationality/nationality.component';
+import { TaxComponent } from './master/products/tax/tax.component';
+import { TaxtypeComponent } from './master/products/taxtype/taxtype.component';
+import { CurrencyComponent } from './master/products/currency/currency.component';
+import { ShiftpoolComponent } from './master/products/shiftpool/shiftpool.component';
+import { OfferComponent } from './master/products/offer/offer.component';
+
 
 
 @NgModule({
@@ -45,7 +63,24 @@ import { EditproductComponent } from './master/products/editproduct/editproduct.
     OthersComponent,
     ProductlistComponent,
     AddnewproductComponent,
-    EditproductComponent
+    EditproductComponent,
+    ProductdepartmentComponent,
+    ProductcategoryComponent,
+    ProducttypeComponent,
+    CustomermasterComponent,
+    CustomergroupComponent,
+    CustomercategoryComponent,
+    CompanymasterComponent,
+    UsermasterComponent,
+    EmployeemasterComponent,
+    EmployeegroupComponent,
+    EmployeetypeComponent,
+    NationalityComponent,
+    TaxComponent,
+    TaxtypeComponent,
+    CurrencyComponent,
+    ShiftpoolComponent,
+    OfferComponent
   ],
   imports: [
     BrowserModule,

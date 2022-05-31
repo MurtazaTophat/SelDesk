@@ -1,0 +1,49 @@
+<div class="page-header">
+    <h4 class="page-title">Shift Pool</h4>
+    <button mat-button mat-dialog-close>&times;</button>
+</div>
+
+<div class="payment-modal newbooking-module">
+  <!-- Left Side Content -->
+  <section class="table-section-outer">
+      <div class="customer-field-outer">
+        <div class="field-row">
+          <div class="form-col">
+            <input matInput (keyup)="applyFilter($event)" name="" placeholder="Search Product">
+            <!-- <button mat-button>Find by Customer</button> -->
+          </div>
+          <div class="form-col add-newbtn">
+            <button mat-button>Add New</button>
+          </div>
+        </div>
+      </div>
+      <div class="example-container table-section">
+          <table mat-table [dataSource]="dataSource">
+          <ng-container matColumnDef="PrKey">
+              <th mat-header-cell *matHeaderCellDef class="text-center"> Key </th>
+              <td mat-cell *matCellDef="let element" class="text-center"> {{element.PrKey}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="PrCode">
+              <th mat-header-cell *matHeaderCellDef class="text-center"> Code </th>
+              <td mat-cell *matCellDef="let element" class="text-center"> {{element.PrCode}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="PrName">
+              <th mat-header-cell *matHeaderCellDef class="text-start"> Shift Name </th>
+              <td mat-cell *matCellDef="let element" class="text-start"> {{element.PrName}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Action">
+            <th mat-header-cell *matHeaderCellDef class="text-center"> Action </th>
+            <td mat-cell *matCellDef="let element" class="text-center"> 
+                <button mat-button class="action-edit"><mat-icon>edit</mat-icon></button> <button mat-button class="action-delete"><mat-icon>delete</mat-icon></button>
+            </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+      </div>
+  </section>
+</div>

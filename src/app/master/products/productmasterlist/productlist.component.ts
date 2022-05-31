@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
-import { AddnewproductComponent } from '../addnewproduct/addnewproduct.component';
-import { EditproductComponent } from '../editproduct/editproduct.component';
+import { AddnewproductComponent } from './addnewproduct/addnewproduct.component'; 
+import { EditproductComponent } from './editproduct/editproduct.component'; 
 
 export interface PeriodicElement {
-  Key: number; 
-  Code: string;
-  Name: string;
-  Desc: string;
+  PrKey: number; 
+  PrCode: string;
+  PrName: string;
+  Description: string;
+  Department: string;
+  Category: String;
+  Type: String;
   Price: string;
-  DeptName: string;
-  GrpName: String;
-  TypeName: String;
   Action: String;
 }
 const ELEMENT_DATA: PeriodicElement[] = [
-  {Key: 1, Code: '019', Name: 'Facial Packages-01', Desc: 'Facial Packages-01', Price: '$250.00',DeptName: 'Cosmetics', GrpName:'Bath', TypeName: 'Classes/Training', Action:'Edit'},
+  {PrKey: 1, PrCode: '019', PrName: 'Facial Packages-01', Description: 'Facial Packages-01', Price: '$250.00',Department: 'Cosmetics', Category:'Bath', Type: 'Classes/Training', Action:'Edit'},
 ];
 @Component({
   selector: 'app-productlist',
@@ -24,7 +24,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./productlist.component.scss']
 })
 export class ProductlistComponent implements OnInit {
-  displayedColumns = ['Key', 'Code', 'Name', 'Desc', 'Price', 'DeptName', 'GrpName', 'TypeName', 'Action'];
+  displayedColumns = ['PrKey', 'PrCode', 'PrName', 'Description', 'Price', 'Department', 'Category', 'Type', 'Action'];
   // dataSource = ELEMENT_DATA;
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   constructor(public dialog: MatDialog) { }

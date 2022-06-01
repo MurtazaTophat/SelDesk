@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
+import { AddproducttypeComponent } from './addproducttype/addproducttype.component';
+import { EditproducttypeComponent } from './editproducttype/editproducttype.component';
 
 export interface PeriodicElement {
   Key: number; 
@@ -30,4 +32,14 @@ export class ProducttypeComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  addProductTypeDialog(){
+    this.dialog.open(AddproducttypeComponent,{
+      width: '700px'
+    })
+  }
+  editProductTypeDialog(){
+    this.dialog.open(EditproducttypeComponent,{
+      width: '700px'
+    })
+  }
 }

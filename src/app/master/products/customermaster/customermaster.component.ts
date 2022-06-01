@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
+import { AddcustomermasterComponent } from './addcustomermaster/addcustomermaster.component';
+import { EditcustomermasterComponent } from './editcustomermaster/editcustomermaster.component';
 
 export interface PeriodicElement {
   CmKey: number; 
@@ -34,5 +36,17 @@ export class CustomermasterComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  addCustomerMasterDialog(){
+    this.dialog.open(AddcustomermasterComponent,{
+      width: '700px'
+    })
+  }
+  editCustomerMasterDialog(){
+    this.dialog.open(EditcustomermasterComponent,{
+      width: '700px'
+    })
+  }
+
 
 }

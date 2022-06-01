@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
+import { AddcompanymasterComponent } from './addcompanymaster/addcompanymaster.component';
+import { EditcompanymasterComponent } from './editcompanymaster/editcompanymaster.component';
 export interface PeriodicElement {
   Code: number; 
   CompanyName: string;
@@ -31,6 +33,17 @@ export class CompanymasterComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  addCompanyMasterDialog(){
+    this.dialog.open(AddcompanymasterComponent ,{
+      width: '700px'
+    })
+  }
+  editCompanyMasterDialog(){
+    this.dialog.open(EditcompanymasterComponent ,{
+      width: '700px'
+    })
   }
 
 }

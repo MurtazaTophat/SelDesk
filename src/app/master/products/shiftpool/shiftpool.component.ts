@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
+import { AddshiftpoolComponent } from './addshiftpool/addshiftpool.component';
+import { EditshiftpoolComponent } from './editshiftpool/editshiftpool.component';
 
 export interface PeriodicElement {
   PrKey: number; 
@@ -28,5 +30,15 @@ export class ShiftpoolComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  addShiftPoolDialog(){
+    this.dialog.open(AddshiftpoolComponent,{
+      width: '700px'
+    })
+  }
+  editShiftPoolDialog(){
+    this.dialog.open(EditshiftpoolComponent,{
+      width: '700px'
+    })
   }
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
+import { AddcurrencyComponent } from './addcurrency/addcurrency.component';
+import { EditcurrencyComponent } from './editcurrency/editcurrency.component';
 export interface PeriodicElement {
   Key: number; 
   Code: string;
@@ -28,6 +30,17 @@ export class CurrencyComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  addCurrencyDialog(){
+    this.dialog.open(AddcurrencyComponent ,{
+      width: '700px'
+    })
+  }
+  editCurrencyDialog(){
+    this.dialog.open(EditcurrencyComponent,{
+      width: '700px'
+    })
   }
 
 }

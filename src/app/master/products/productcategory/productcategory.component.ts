@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
+import { AddproductcategoryComponent } from './addproductcategory/addproductcategory.component';
+import { EditproductcategoryComponent } from './editproductcategory/editproductcategory.component';
 
 export interface PeriodicElement {
   PrKey: number; 
@@ -29,6 +31,16 @@ export class ProductcategoryComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  addProductCategoryDialog(){
+    this.dialog.open(AddproductcategoryComponent,{
+      width: '700px'
+    })
+  }
+  editProductCategoryDialog(){
+    this.dialog.open(EditproductcategoryComponent,{
+      width: '700px'
+    })
   }
 
 }

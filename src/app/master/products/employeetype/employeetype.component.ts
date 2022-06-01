@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
+import { AddemployeetypeComponent } from './addemployeetype/addemployeetype.component';
+import { EditemployeetypeComponent } from './editemployeetype/editemployeetype.component';
 
 export interface PeriodicElement {
   PrKey: number; 
@@ -31,5 +33,14 @@ export class EmployeetypeComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
+  addEmployeeTypeDialog(){
+    this.dialog.open(AddemployeetypeComponent,{
+      width: '700px'
+    })
+  }
+  editEmployeeTypeDialog(){
+    this.dialog.open(EditemployeetypeComponent,{
+      width: '700px'
+    })
+  }
 }

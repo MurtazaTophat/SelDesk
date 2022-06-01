@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
+import { AddofferComponent } from './addoffer/addoffer.component';
+import { EditofferComponent } from './editoffer/editoffer.component';
 
 export interface PeriodicElement {
   PrKey: number; 
@@ -29,5 +31,15 @@ export class OfferComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  addOfferDialog(){
+    this.dialog.open(AddofferComponent,{
+      width: '700px'
+    })
+  }
+  editOfferDialog(){
+    this.dialog.open(EditofferComponent,{
+      width: '700px'
+    })
   }
 }

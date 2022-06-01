@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
+import { AddcustomergroupComponent } from './addcustomergroup/addcustomergroup.component';
+import { EditcustomergroupComponent } from './editcustomergroup/editcustomergroup.component';
 
 export interface PeriodicElement {
   Key: number; 
@@ -28,5 +30,16 @@ export class CustomergroupComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  addCustomerGroupDialog(){
+    this.dialog.open(AddcustomergroupComponent,{
+      width: '700px'
+    })
+  }
+  editCustomerGroupDialog(){
+    this.dialog.open(EditcustomergroupComponent,{
+      width: '700px'
+    })
   }
 }

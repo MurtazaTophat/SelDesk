@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
+import { AddemployeegroupComponent } from './addemployeegroup/addemployeegroup.component';
+import { EditemployeegroupComponent } from './editemployeegroup/editemployeegroup.component';
 
 export interface PeriodicElement {
   PrKey: number; 
@@ -28,5 +30,15 @@ export class EmployeegroupComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  addEmployeeGroupDialog(){
+    this.dialog.open(AddemployeegroupComponent,{
+      width: '700px'
+    })
+  }
+  editEmployeeGroupDialog(){
+    this.dialog.open(EditemployeegroupComponent,{
+      width: '700px'
+    })
   }
 }

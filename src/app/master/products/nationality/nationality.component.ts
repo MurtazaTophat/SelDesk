@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
+import { AddnationalityComponent } from './addnationality/addnationality.component';
+import { EditnationalityComponent } from './editnationality/editnationality.component';
 
 export interface PeriodicElement {
   PrKey: number; 
@@ -28,6 +30,17 @@ export class NationalityComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  addNationlityDialog(){
+    this.dialog.open(AddnationalityComponent,{
+      width: '700px'
+    })
+  }
+  editNationlityDialog(){
+    this.dialog.open(EditnationalityComponent,{
+      width: '700px'
+    })
   }
 
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
+import { AddtaxtypeComponent } from './addtaxtype/addtaxtype.component';
+import { EdittaxtypeComponent } from './edittaxtype/edittaxtype.component';
 
 export interface PeriodicElement {
   PrKey: number; 
@@ -28,5 +30,16 @@ export class TaxtypeComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  addTaxTypeDialog(){
+    this.dialog.open(AddtaxtypeComponent,{
+      width: '700px'
+    })
+  }
+  editTaxTypeDialog(){
+    this.dialog.open(EdittaxtypeComponent,{
+      width: '700px'
+    })
   }
 }

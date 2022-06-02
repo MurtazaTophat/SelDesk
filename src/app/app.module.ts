@@ -75,6 +75,7 @@ import { EditnationalityComponent } from './master/products/nationality/editnati
 import { EditproductdepartmentComponent } from './master/products/productdepartment/editproductdepartment/editproductdepartment.component';
 import { AddproducttypeComponent } from './master/products/producttype/addproducttype/addproducttype.component';
 import { EditproducttypeComponent } from './master/products/producttype/editproducttype/editproducttype.component';
+import { SettingsComponent } from './settings/settings.component';
 
 
 
@@ -148,7 +149,8 @@ import { EditproducttypeComponent } from './master/products/producttype/editprod
     EditnationalityComponent,
     EditproductdepartmentComponent,
     AddproducttypeComponent,
-    EditproducttypeComponent
+    EditproducttypeComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

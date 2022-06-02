@@ -1,0 +1,136 @@
+<mat-toolbar class="mat-elevation-z6" color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img src="assets/img/logo.png" alt="">
+    <span class="example-spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu" class="user-image">
+      <img src="../assets/img/user/user.jpg" alt="">
+      <span>Jone Doe</span>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <span>Manage Subscriptions</span>
+      </button>
+      <button mat-menu-item>
+        <span>My Profile</span>
+      </button>
+      <button mat-menu-item>
+        <span>Inbox</span>
+      </button>
+      <button mat-menu-item>
+        <span>Billing</span>
+      </button>
+      <button mat-menu-item>
+        <span>Activity Log</span>
+      </button>
+      <button mat-menu-item>
+        <span>Change Password</span>
+      </button>
+    </mat-menu>
+    <button mat-button class="ml-5">
+      <mat-icon class="mr-2">logout</mat-icon>
+    </button>
+  </mat-toolbar>
+  
+  <section class="main-outer">
+    <mat-drawer-container class="main-inner" autosize>
+      <mat-drawer  opened #drawer class="sidenav" mode="side">
+          <div class="sidenav-content">
+              <p><a routerLink="/"><mat-icon>dashboard</mat-icon><span>Dash Board</span></a></p>
+              <p><a routerLink="/billing"><mat-icon>calculate</mat-icon><span>Billing</span></a></p>
+              <p><a routerLink="/reports"><mat-icon>receipt</mat-icon><span>Reports</span></a></p>
+              <p (click)="ToggelOpen()"><a><mat-icon>filter_vintage</mat-icon><span>Masters</span></a></p>
+                <div class="menu-option" [ngClass]="[Flag ? 'd-block': 'd-none']">
+                    <span><a routerLink="/products">Products</a></span>
+                    <span><a routerLink="/customer">Customers</a></span>
+                    <span><a routerLink="/others">Other</a></span>
+                </div>
+              <p><a routerLink="/settings"><mat-icon>tune</mat-icon><span>Settings</span></a></p>
+          </div>
+      </mat-drawer>
+      
+      <div class="main-layout">
+        <div class="breadcrumb-outer">
+          <nav aria-label="breadcrumb" >
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a routerLink="/">Dashboard</a></li>
+              <li class="breadcrumb-item active" aria-current="page"><a routerLink="/settings">Settings</a></li>
+            </ol>
+          </nav>
+        </div>
+        <div class="payment-modal newbooking-module">
+          <section class="table-section-outer">
+            <mat-tab-group mat-align-tabs="center">
+                <mat-tab label="Functions">
+                    <div class="example-container table-section">
+                        <table mat-table [dataSource]="dataSource">
+                  
+                          <ng-container matColumnDef="Type">
+                            <th mat-header-cell *matHeaderCellDef> Type </th>
+                            <td mat-cell *matCellDef="let element"> {{element.Type}} </td>
+                          </ng-container>
+                  
+                          <ng-container matColumnDef="Action">
+                            <th mat-header-cell *matHeaderCellDef class="text-center" style="width: 250px;"> Action </th>
+                            <td mat-cell *matCellDef="let element" class="text-center">
+                                <mat-radio-group aria-label="Select an option">
+                                    <mat-radio-button value="1">Enable</mat-radio-button>
+                                    <mat-radio-button value="2" class="ml-3">Disable</mat-radio-button>
+                                  </mat-radio-group>
+                            </td>
+                          </ng-container>
+                  
+                          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Others">
+                    <div class="customer-field-outer">
+                        <div class="field-row">
+                            <div class="form-col">
+                                <label>Item Start <sup>*</sup></label>
+                                <input matInput name="" type="number">
+                            </div>
+                            <div class="form-col">
+                                <label>Item Length <sup>*</sup></label>
+                                <input matInput name="" type="number">
+                            </div>
+                            <div class="form-col">
+                                <label>Price Start <sup>*</sup></label>
+                                <input matInput name="" type="number">
+                            </div>
+                            <div class="form-col">
+                                <label>Price Length <sup>*</sup></label>
+                                <input matInput name="" type="number">
+                            </div>
+                            <div class="form-col">
+                                <label>Vat Type <sup>*</sup></label>
+                                    <select name="" >
+                                        <option>Inclusive Vat</option>
+                                </select>
+                            </div>
+                            <div class="form-col">
+                                <label>Bill Type <sup>*</sup></label>
+                                    <select name="" >
+                                        <option></option>
+                                </select>
+                            </div>
+                            <div class="form-col">
+                                <label>Vat Rounding <sup>*</sup></label>
+                                    <select name="" >
+                                        <option>Normal</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+          </section>
+        </div>
+      </div>
+    
+    </mat-drawer-container>    
+  </section>
+  

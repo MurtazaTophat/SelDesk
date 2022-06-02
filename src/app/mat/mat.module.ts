@@ -15,6 +15,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatRippleModule} from '@angular/material/core';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 const material = [
@@ -31,7 +33,9 @@ const material = [
   MatSelectModule,
   MatRippleModule,
   MatCheckboxModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatTabsModule,
+  MatRadioModule
 ]
 
 @NgModule({
